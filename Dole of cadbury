@@ -11,7 +11,59 @@ to first child and then remaining 5X5 to next in queue.
 0<R<S<1501
 
 ------Input Format
-First line contains an integer P that denotes
+First line contains an integer P that denotes minimum length of cadbury in the box
+Second  line contains an integer Q that denotes maximum length of cadbury in the box
+First line contains an integer R that denotes minimum width of cadbury in the box
+First line contains an integer S that denotes maximum width of cadbury in the box
 
+-------Output
+Print total number of children that will get chocolate
 
+-------Test Case
+INPUT
+5
+7
+3
+4
+OUTPUT
+24
+
+EXPLANATION
+Length is in between 5 to 7 and width is in between 3 to 4.
+So we have 5X3,5X4,6X3,6X4,7X3,7X4 type of cadbury in the box.
+If we take 5X3:
+First, we can give 3X3 square cadbury to 1st child.Then we are left with 3X2.Now largest square is 2X2 which will be given 
+to next child.Next,we are left with two 1X1 part of cadbury which will be given to another two children .
+And so on.
 */
+
+
+//---------------------SOLUTION---------------------
+
+#include<iostream>
+#include <cstdlib>
+
+using namespace std;
+int children(int x,int y)
+{
+    if(x==0||y==0)
+        return 0;
+    return(1+children(min(x,y),abs(x-y)));
+}
+
+int main()
+{
+  int p,q,r,s;
+  cin>>p>>q>>r>>s;
+  int x=0;
+  for(int i=p;i<=q;i++)
+  {
+      for(int j=r;j<=s;j++)
+      {
+          x=x+children(i,j);
+
+      }
+  }
+  cout<<x;
+  return 0;
+}
