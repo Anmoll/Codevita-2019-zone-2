@@ -1,0 +1,97 @@
+/*
+-------------------QUESTION-----------------
+If n=3
+OUTPUT-
+10203010011012
+**4050809
+****607
+
+If n=4
+OUTPUT-
+1020304017018019020
+**50607014015016
+****809012013
+******10011
+
+---------------------PATTERN RECOGNITION---------------
+
+1st pyramid-
+1 2 3
+  4 5 
+    6
+    
+2nd pyramid-
+10 11 12
+8 9
+7
+
+Then join both-
+1 2 3 10 11 12
+  4 5 8 9
+    6 7
+  
+Insert 0's after every element exept last:
+  10203010011012
+    4050809
+      607
+      
+Then insert "*"
+10203010011012
+**4050809
+****607
+
+
+*/
+
+//----------------------SOLUTION---------------
+
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+   int n;
+   cin>>n;
+   int z=1;
+   int r=0;
+   for(int i=n;i>=1;i--)
+   {
+       int j;
+       for( j=0;j<r;j++)
+       {
+           cout<<"*";
+
+       }
+       r=r+2;
+       for(j=z;j<=z+i-1;j++)
+       {
+            cout<<j<<"0";
+
+       }
+        z=j;
+
+
+       int x=0;
+       for(j=1;j<i;j++)
+       {
+
+         x=x+j*2;
+
+        }
+        x=x+z;
+
+       for( j=x;j<=x+i-1;j++)
+       {
+            if(j==x+i-1)
+                cout<<j;
+            else
+                cout<<j<<"0";
+       }
+
+       cout<<endl;
+
+
+   }
+  return 0;
+}
