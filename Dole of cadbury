@@ -1,0 +1,17 @@
+/*
+-----------------------QUESTION--------------------------
+
+------Problem statement-You are a teacher in reputed school.During celebration day you were assigned a task to distribute a cadbury 
+such that maximum children get the chocolate.You have a box full of Cadbury with different width and height.You can only distribute 
+largest square shape Cadbury.So if you have a cadbury of length 10 and width 5,then you need to break Cadbury in 5X5 square and distribute 
+to first child and then remaining 5X5 to next in queue.
+
+------Constraints-
+0<P<Q<1501
+0<R<S<1501
+
+------Input Format
+First line contains an integer P that denotes
+
+
+*/
